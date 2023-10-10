@@ -2,8 +2,17 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
+interface ContentProps {
+  heading: string;
+  body: string;
+  closeMessage: string;
+  logoBGColour: string;
+  logoColour: string;
+  iconChoice: React.ReactNode;
 
-export default function Modal({ open, onClose, content }) {
+}
+
+export default function Modal({ open, onClose, content }: { open: boolean; onClose: () => void; content: ContentProps }) {
   const { heading = "Default Heading", body = "Default Body", closeMessage = "Close", logoBGColour = "bg-green-100", logoColour = "text-green-600", iconChoice = <CheckIcon className="h-6 w-6 text-black" aria-hidden="true" />
 } = content || {};
 
