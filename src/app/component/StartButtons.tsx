@@ -40,8 +40,6 @@ const StartButtons = () => {
       <button className="bg-yellow-300 hover:bg-yellow-500 dark:bg-yellow-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Sign Up</button>
       <button className="bg-gray-100 hover:bg-gray-300 dark:bg-gray-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Start without an account</button>
     </div>
-
-
   )
   const [startIsModalOpen, setStartIsModalOpen] = useState(false);
 
@@ -66,7 +64,7 @@ const StartButtons = () => {
       <div
         className="howContainer flex flex-col items-center gap-3 hover:cursor-pointer"
         onClick={howToOpenModal}
-        type="primary"
+        data-type="primary"
       >
         <Image
           src="/information.png"

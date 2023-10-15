@@ -1,14 +1,15 @@
-import { Fragment, useState } from 'react'
+import { Fragment, ReactNode, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
 interface ContentProps {
   heading: string;
-  body: string;
+  body: string | ReactNode;
   closeMessage: string;
-  logoBGColour: string;
-  logoColour: string;
-  iconChoice: React.ReactNode;
+  // ? - make these properties optional by adding a ? after the property names in the type definition
+  logoBGColour?: string;
+  logoColour?: string;
+  iconChoice?: React.ReactNode;
 
 }
 
@@ -52,9 +53,9 @@ export default function Modal({ open, onClose, content }: { open: boolean; onClo
                         {heading}
                       </Dialog.Title>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">
+                        <div className="text-sm text-gray-500">
                           {body}
-                        </p>
+                        </div>
                       </div>
                     </div>
                   </div>
