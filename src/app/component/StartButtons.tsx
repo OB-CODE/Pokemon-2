@@ -18,7 +18,7 @@ const StartButtons = () => {
   // Move the useSelector inside the component
   const userLogged = useSelector((state: RootState) => state.changeLoggedState.value);
 
-  console.log(userLogged);
+  // console.log(userLogged);
 
   // code for the How To Modal
   let bigBody = (
@@ -51,9 +51,12 @@ const StartButtons = () => {
     // code for the START To Modal
   let startMessag = (
     <div className="flex flex-col gap-2 items-center w-full ">
-      <button className="bg-yellow-300 hover:bg-yellow-500 dark:bg-yellow-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Log In</button>
-      <button className="bg-yellow-300 hover:bg-yellow-500 dark:bg-yellow-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Sign Up</button>
-      <button onClick={handleToggleLogin} className="bg-gray-100 hover:bg-gray-300 dark:bg-gray-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Start without an account</button>
+      {/* <button className="bg-yellow-300 hover:bg-yellow-400 dark:bg-yellow-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Log In</button> */}
+      <button className="bg-yellow-300 hover:bg-yellow-400 w-fit py-1 px-3 border-2 border-black rounded-xl">Log In</button>
+      {/* <button className="bg-yellow-300 hover:bg-yellow-500 dark:bg-yellow-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Sign Up</button> */}
+      <button className="bg-yellow-300 hover:bg-yellow-500  w-fit py-1 px-3 border-2 border-black  rounded-xl">Sign Up</button>
+      <button onClick={handleToggleLogin} className="bg-gray-100 hover:bg-gray-300 w-fit py-1 px-3 border-2 border-black rounded-xl">Start without an account</button>
+      {/* <button onClick={handleToggleLogin} className="bg-gray-100 hover:bg-gray-300 dark:bg-gray-800 w-fit py-1 px-3 border-2 border-black dark:border-white rounded-xl">Start without an account</button> */}
     </div>
   )
   const [startIsModalOpen, setStartIsModalOpen] = useState(false);

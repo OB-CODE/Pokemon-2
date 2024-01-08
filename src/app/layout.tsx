@@ -15,15 +15,17 @@ const inter = Inter({ subsets: ['latin'] })
 // }
 
 export default function RootLayout({
+  
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <Provider store={store}>
-        <body className={inter.className}>{children}</body>
-      </Provider>,
+      {/* Thanks a lot, In my case I was wrapping the body in the <Provider> of redux, by keeping <Provider> within body the issue has been resolved.
+      https://stackoverflow.com/questions/72509865/error-there-was-an-error-while-hydrating-because-the-error-happened-outside-of
+      */}
+        <body className={inter.className}><Provider store={store}>{children}      </Provider></body>
     </html>
   )
 }
